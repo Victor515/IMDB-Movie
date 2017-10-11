@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import {BrowserRouter as Router, Route, Link, IndexRoute, hashHistory} from 'react-router-dom'
+import {HashRouter as Router, Route, Link, IndexRoute, hashHistory} from 'react-router-dom'
 import 'semantic-ui-css/semantic.min.css';
 import { Button, Container, Header, Input, Segment, Dropdown, Checkbox, Divider } from 'semantic-ui-react'
 
