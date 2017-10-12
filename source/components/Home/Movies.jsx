@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Button, Container, Header, Input, Segment, Dropdown, Checkbox, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import PropTypes from 'prop-types'
 
 class Movies extends Component{
 	render(){
@@ -13,11 +14,16 @@ class Movies extends Component{
 					pathname : '/detail',
 					state: data
 				}
-				return(<Link to = {path}><Image inline centered bordered src = {"https://image.tmdb.org/t/p/w500/" + movie.poster_path} 
+				return(<Link to = {path} key = {movie.id}><Image inline centered bordered src = {"https://image.tmdb.org/t/p/w500/" + movie.poster_path} 
 					size = 'small' /></Link>);
 			},this)}
 			</div>);
 	}
+}
+
+Movies.propTypes = {
+	movies: PropTypes.object.isRequired,
+	genre: PropTypes.string.isRequired
 }
 
 

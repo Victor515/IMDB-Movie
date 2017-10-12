@@ -8,8 +8,8 @@ import List_ from './List_.jsx'
 
 
 class Search extends Component{
-	constructor(props){
-		super(props);
+	constructor(){
+		super();
 		this.state = { api_key: "24e272310ea465a7a1ba7b64ddfcbe5c",
 					   sort_By : 'Title',
 					   data : null,

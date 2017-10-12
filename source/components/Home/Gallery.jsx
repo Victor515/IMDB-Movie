@@ -92,7 +92,7 @@ class Gallery extends Component{
 				<Segment>
 					<Button onClick = {this.handleClick}>All</Button>
 					{this.state.genres.map(function(genre){
-						return(<Button onClick = {this.handleClick}>{genre.name}</Button>);
+						return(<Button key = {genre.id} onClick = {this.handleClick}>{genre.name}</Button>);
 					}, this)}
 				<Movies movies = {this.state.movies} genre = {this.state.selected_genre}/>
 				</Segment>

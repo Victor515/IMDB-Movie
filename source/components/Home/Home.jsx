@@ -5,7 +5,6 @@ import axios from 'axios'
 
 //import styles from './Home.scss'
 import Search from './Search.jsx'
-import Heading from './Heading.jsx'
 
 class Home extends Component {
 	/*
@@ -37,12 +36,10 @@ class Home extends Component {
 
     render() {
     	return(
-    		<div className="Home">
     			<Container>
     					<Search />
     			</Container>
 
-    		</div>
         )
     }
 }

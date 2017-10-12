@@ -3,6 +3,7 @@ import { Button, Container, Header, Input, Segment, Dropdown, Checkbox, Icon, Im
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import findIndex from 'lodash'
+import PropTypes from 'prop-types'
 
 class Detail extends Component{
 	constructor(props){
@@ -58,6 +59,11 @@ class Detail extends Component{
 				</Segment>
 			);
 	}
+}
+
+
+Detail.propTypes = {
+	location: PropTypes.object.isRequired
 }
 
 export default Detail;
