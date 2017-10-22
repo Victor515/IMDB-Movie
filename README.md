@@ -1,5 +1,5 @@
 # IMDB Movie gallery
-A web application consuming IMDB API for movie searching
+A web application consuming IMDB API to display Top movies, combined with searching functionalities
 
 ## Install
 1. Clone or Download the repository
