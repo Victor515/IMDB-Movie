@@ -8,11 +8,11 @@ class Heading  extends Component{
 	render() {
 		return(
             <Container>
-			<Header as = "h1" textAlign = 'center' color = 'blue'>IMDB Movie</Header>
+			<Header as = "h1" textAlign = 'center' color = 'blue'>TMDB Movie</Header>
                         <Button><Link to="/">search</Link></Button>
                         <Button><Link to="/gallery">gallery</Link></Button>
             </Container>
-		)
+		);
 	}
 }
 
