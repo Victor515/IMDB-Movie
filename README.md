@@ -1,5 +1,5 @@
-# TMDB Movie gallery
-A web application consuming TMDB API to display Top movies, combined with searching functionalities
+# IMDB Movie gallery
+A web application consuming IMDB public API to display Top movies, combined with searching functionalities
 
 ## Install
 1. Clone or Download the repository
