@@ -1,14 +1,15 @@
 {
-  "name": "uiucwp_fa17",
+  "name": "TMDB Gallery",
   "version": "1.0.0",
   "description": "",
   "main": "index.jsx",
   "scripts": {
+    "start": "node index.js",
     "watch": "webpack -d --watch",
     "build": "webpack",
     "dev": "webpack-dev-server --content-base public/ --history-api-fallback"
   },
-  "author": "Simon Lu",
+  "author": "Victor Ouyang",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^6.7.7",
@@ -27,6 +28,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "express": "^4.16.3",
     "lodash": "^4.17.4",
     "normalize.css": "^6.0.0",
     "prop-types": "^15.6.0",

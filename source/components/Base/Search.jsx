@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Container, Header, Input, Segment, Dropdown, Checkbox, Divider } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
+import {Container, Input, Segment, Dropdown, Checkbox} from 'semantic-ui-react'
 import axios from 'axios'
-import orderBy from "lodash"
 
 import List_ from './List_.jsx'
 

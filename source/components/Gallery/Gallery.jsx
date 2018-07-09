@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import { Button, Container, Header, Input, Segment, Dropdown, Checkbox } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
+import { Button, Segment} from 'semantic-ui-react'
 import axios from 'axios'
-import uniqBy from 'lodash'
 
-import Movies from './Movies.jsx'
+import Movies from '../Base/Movies.jsx'
 
 class Gallery extends Component{
 	constructor(){
@@ -67,20 +65,7 @@ class Gallery extends Component{
 		});
 
 	}
-/*
-	getALL(){
-		let movie = this.state.movies;
-		let all_movie = [];
-		console.log(movie);
-		for(let key in movie){
-			all_movie = all_movie.concact(movie[key]);
-		}
-		console.log(all_movie);
-		movie['All'] = all_movie;
-		this.setState({movies:movie});
 
-	}
-*/
 	render(){
 		if(this.state.genres === null){
 			return(
@@ -94,7 +79,7 @@ class Gallery extends Component{
 					{this.state.genres.map(function(genre){
 						return(<Button key = {genre.id} onClick = {this.handleClick}>{genre.name}</Button>);
 					}, this)}
-				<Movies movies = {this.state.movies} genre = {this.state.selected_genre}/>
+					<Movies movies = {this.state.movies} genre = {this.state.selected_genre}/>
 				</Segment>
 			);
 	}

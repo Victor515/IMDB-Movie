@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Container, Header, Input, Segment, Dropdown, Checkbox, Image} from 'semantic-ui-react'
+import {Segment, Image} from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
 import PropTypes from 'prop-types'
 
 

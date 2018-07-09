@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Container, Header, Input, Segment, Dropdown, Checkbox, Icon, Image } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
-import findIndex from 'lodash'
+import { Button, Container, Header, Segment, Image } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 
 class Detail extends Component{
@@ -44,7 +41,6 @@ class Detail extends Component{
 
 	render(){
 		return(
-				
 				<Segment>
 				<Button floated = 'left' onClick = {this.handleClick} className = 'left'>&#10094;</Button>
 				<Button floated = 'right' onClick = {this.handleClick} className = 'right'>&#10095;</Button>
