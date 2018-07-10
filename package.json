@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.jsx",
   "scripts": {
-    "start": "npm run build & node server.js",
+    "start": "node server.js",
+    "postinstall": "npm run build",
     "watch": "webpack -d --watch",
     "build": "webpack --config webpack.config.js --progress",
     "dev": "webpack-dev-server --content-base public/ --history-api-fallback"
