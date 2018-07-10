@@ -1,9 +1,9 @@
 'use strict';
 
-const webpack = require('webpack');
 const path = require('path');
-const autoprefixer = require('autoprefixer');
 const copy = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const BUILD_DIR = path.resolve(__dirname, 'public');
 const APP_DIR = path.resolve(__dirname, 'source');
@@ -11,8 +11,7 @@ const APP_DIR = path.resolve(__dirname, 'source');
 const config = {
 
     entry: {
-        app: [APP_DIR + '/index.jsx'],
-        vendor: ['react', 'react-dom', 'react-router', 'react-router-dom']
+        app: [APP_DIR + '/index.jsx']
     },
 
     output: {
@@ -24,44 +23,48 @@ const config = {
 
 	module: {
         loaders : [
-
             {
                 test: /\.jsx?/,
                 exclude : [/node_modules/, /bower_components/],
                 include : APP_DIR,
                 loader : 'babel-loader',
                 query: {
-                    presets: ['es2015']
+                    presets: ['es2015', 'react']
                 }
             },
 
             {
                 test: /\.scss$/,
-                loaders: ['style-loader', 'css-loader?-url', 'postcss-loader', 'sass-loader']
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    //resolve-url-loader may be chained before sass-loader if necessary
+                    use: ['css-loader?-url', 'postcss-loader', 'sass-loader']
+                  })
             },
 
             {
                 test: /\.css$/,
-                loaders: ['style-loader', 'css-loader?-url', 'postcss-loader']
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ['css-loader?-url', 'postcss-loader']
+                })
             }
 
         ]
     },
 
     plugins: [
+        // copy the assets
         new copy([
-            {from: APP_DIR + '/html/', to: BUILD_DIR},
             {from: APP_DIR + '/assets/', to: BUILD_DIR + '/assets/'}
         ], {
             copyUnmodified: false,
             debug: 'debug'
         }),
-
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            minChunks: Infinity,
-            filename: 'vendor.bundle.js'
-        })
+        new HtmlWebpackPlugin({
+            template: APP_DIR + '/html/index.html'
+        }),
+        new ExtractTextPlugin('styles.css')
     ]
 };
 
