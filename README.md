@@ -4,7 +4,7 @@ A web application consuming [TMDB public API](https://www.themoviedb.org/documen
 ## Install
 1. Clone or Download the repository
 2. Cd the repository, run `npm install` to install all node modules
-3. Run "npm run dev"
+3. Run `npm run dev`
 4. In browser, go to `localhost:5000`
 
 ## Deploy
